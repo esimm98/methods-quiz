@@ -43,12 +43,19 @@ class MethodsQuizTest < MiniTest::Test
 	end
 
 	def test_two_as_one
-		assert_equal true, @m.two_as_one(1, 2, 3)
-		assert_equal true, @m.two_as_one(17, 25, 8)
-		assert_equal true, @m.two_as_one(-10, -5, -5)
-		assert_equal true, @m.two_as_one(0, 0, 0)
-		assert_equal false, @m.two_as_one(5, 5, 5)
-		assert_equal false, @m.two_as_one(1, 3, 5)
+		assert_equal true, @m.two_as_one?(1, 2, 3)
+		assert_equal true, @m.two_as_one?(17, 25, 8)
+		assert_equal true, @m.two_as_one?(-10, -5, -5)
+		assert_equal true, @m.two_as_one?(0, 0, 0)
+		assert_equal false, @m.two_as_one?(5, 5, 5)
+		assert_equal false, @m.two_as_one?(1, 3, 5)
+	end
+
+	def test_pig_latinify
+		assert_equal "igpay", @m.pig_latinify("pig")
+		assert_equal "omputercay", @m.pig_latinify("COmPuTEr")
+		assert_equal "appleway", @m.pig_latinify("   ApPle   ")
+		assert_equal "orangeway", @m.pig_latinify("orange")
 	end
 
 end
