@@ -20,11 +20,19 @@ class MethodsQuizTest < MiniTest::Test
 	end
 
 	def test_not_string
-		assert_equal "not no", @m.not_string?("no")
-		assert_equal "not yes", @m.not_string?("yes")
-		assert_equal "not no", @m.not_string?("not no")
-		assert_equal "not yes", @m.not_string?("not yes")
-		assert_equal "not working", @m.not_string?("working")
+		assert_equal "not no", @m.not_string("no")
+		assert_equal "not yes", @m.not_string("yes")
+		assert_equal "not no", @m.not_string("not no")
+		assert_equal "not yes", @m.not_string("not yes")
+		assert_equal "not working", @m.not_string("working")
+	end
+
+	def test_icy_hot
+		assert_equal true, @m.icy_hot?(-1, 101)
+		assert_equal true, @m.icy_hot?(200, -100)
+		assert_equal false, @m.icy_hot?(0, 1000)
+		assert_equal false, @m.icy_hot?(-500, 100)
+		assert_equal false, @m.icy_hot?(0, 100)
 	end
 
 end
