@@ -30,6 +30,10 @@ module MethodsQuiz
 		a + b == c || a + c == b || b + c == a
 	end
 
-	# TODO - write pig_latinify
+	def pig_latinify(str)
+		str.downcase
+		str.strip
+		if(str[0] == "a")
+	end
 
 end
