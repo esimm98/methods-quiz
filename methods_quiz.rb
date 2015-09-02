@@ -16,7 +16,15 @@ module MethodsQuiz
 		(a < 0 && b > 100) || (b < 0 && a > 100)
 	end
 	
-	# TODO - write closer_to
+	def closer_to(target, b, c)
+		if((target - b).abs < (target - c).abs)
+			return b
+		elsif((target - b).abs > (target - c).abs)
+			return c
+		else
+			return 0
+		end
+	end
 
 	# TODO - write two_as_one?
 
