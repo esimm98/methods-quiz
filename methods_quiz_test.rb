@@ -54,6 +54,7 @@ class MethodsQuizTest < MiniTest::Test
 	def test_pig_latinify
 		assert_equal "igpay", @m.pig_latinify("pig")
 		assert_equal "omputercay", @m.pig_latinify("COmPuTEr")
+		assert_equal "oolschay", @m.pig_latinify("school")
 		assert_equal "appleway", @m.pig_latinify("   ApPle   ")
 		assert_equal "orangeway", @m.pig_latinify("orange")
 	end
