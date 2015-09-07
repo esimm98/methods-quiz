@@ -31,9 +31,22 @@ module MethodsQuiz
 	end
 
 	def pig_latinify(str)
-		str.downcase
-		str.strip
-		if(str[0] == "a")
+		str = str.downcase
+		str = str.strip
+
+		if (str[0] == 'y')
+			vowel = str.index /[aeiou]/
+		else
+			vowel = str.index /[aeiouy]/
+		end
+
+		if(vowel == 0)
+			str.insert(-1, "way")
+		else
+			str.insert(-1, str[0, vowel])
+			str.slice!(0, vowel)
+			str.insert(-1, "ay")
+		end
 	end
 
 end
