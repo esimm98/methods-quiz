@@ -57,6 +57,7 @@ class MethodsQuizTest < MiniTest::Test
 		assert_equal "igpay", @m.pig_latinify("pig")
 		assert_equal "ythmrhay", @m.pig_latinify("rhythm")
 		assert_equal "ellowyay", @m.pig_latinify("yellow")
+		assert_equal "*ckfay", @m.pig_latinify("  fUcK ")
 	end
 
 end

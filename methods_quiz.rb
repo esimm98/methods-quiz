@@ -40,6 +40,10 @@ module MethodsQuiz
 			vowel = str.index /[aeiouy]/
 		end
 
+		if (str == "shit" || str == "piss" || str == "fuck" || str == "cunt" || str == "cocksucker" || str == "motherfucker" || str == "tits")
+			str = str.gsub(/[aeiou]/, '*')
+		end
+
 		if(vowel == 0)
 			str.insert(-1, "way")
 		else
